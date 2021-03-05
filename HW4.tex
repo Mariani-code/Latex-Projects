@@ -1,0 +1,72 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage[hmargin=1in,vmargin=1in]{geometry}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{parskip} % Kill first paragraph indenting
+\usepackage{tikz}
+\usepackage[T1]{fontenc}
+\usepackage{environ}
+
+
+
+\pagestyle{fancy}
+\fancyhead[L]{Omeed Mariani \\ CMSC/Math 207}
+\fancyhead[R]{HW 4 \\ Page \thepage\ of \pageref{LastPage}}
+
+\newcounter{problemnum}
+\newcommand{\newprob}{\addtocounter{problemnum}{1} \noindent (\textbf{\arabic{problemnum}) }}
+
+\begin{document}
+
+\newprob Prove that for all integers $n$ and $m$, if $n-m$ is even, then \mathrm{$n^3$} - $m^3$ is even.
+
+Let $m, n \in \mathbb{Z}$ and suppose $n-m$ is even. Then $n-m$=$2k$ for some $k $$\in\mathbb{Z}$. To prove this let's factor \mathrm{$n^3$} - \mathrm{$m^3$}. Upon factoring we get:
+\begin{align*}
+n^3-m^3
+&= (n-m)(n^3+nm+m^3)\\
+&= 2k(n^2+nm+m^2).
+\end{align*}
+
+This shows that \mathrm{$n^3$} - $m^3$ is even.
+
+
+
+\newprob Use an infinite geometric series to write 320.54924924924... as a fraction of integers.
+
+First let's convert this to an infinite geometric series.
+\begin{align*}
+320.5\overline{492}
+&=320.5+0.0492+0.0000492+0000000492.....
+\end{align*}
+
+
+
+
+convert everything to fractions and we get the series to look like this:
+$$\(\frac{3205}{10}\)+\(\frac{123}{2500}\)+\(\frac{123}{2500}\)\(\left(\frac{1}{1000}\right)+\(\frac{123}{2500}\)\(\left(\frac{1}{1000}\right)^2...$$
+\linebreak
+The sum of the geometric series is equal to $\frac{a}{{1 - r}}}$ where $r$ represents the common ratio and $a$ representing the first term.This only works when \lvert r \rvert $<$ 1.
+
+$$\math\sum\limits_{k = 1}^\infty {ar^{k - 1} = \frac{a}{{1 - r}}}. $$
+
+
+$$a = \(\frac{123}{2500}\), \quad r = \(\frac{1}{1000}\).$$
+
+\begin{align*}
+\frac{a}{1-r}
+&=\frac{\frac{123}{2500}}{1-\frac{1}{1000}}\\
+&=\frac{82}{1665}.
+\end{align*}
+
+\begin{align*}
+320.5\overline{492}
+&=\left(\frac{3205}{10} + \frac{82}{1665}\right)\\
+&=\left(\frac{1067429}{3330}\right).
+\end{align*}
+
+
+
+\end{document}

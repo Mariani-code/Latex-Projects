@@ -1,0 +1,99 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage[hmargin=1in,vmargin=1in]{geometry}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{parskip} % Kill first paragraph indenting
+\usepackage{tikz}
+\usepackage[T1]{fontenc}
+\usepackage{environ}
+
+
+
+\pagestyle{fancy}
+\fancyhead[L]{Omeed Mariani \\ CMSC/Math 207}
+\fancyhead[R]{HW 8 \\ Page \thepage\ of \pageref{LastPage}}
+
+\newcounter{problemnum}
+\newcommand{\newprob}{\addtocounter{problemnum}{1} \noindent (\textbf{\arabic{problemnum}) }}
+
+\begin{document}
+
+\newprob Prove that $3^{2n}-1$ is divisible by 8 for each integer $n 	\geq 0$.\\
+\\
+For $n \in \mathbb{N}$, let $P(n)$ be divisible by 8 for each integer $n \geq 0$.\\
+\textbf{Basis:} \\
+3^{2(0)}-1=1-1=0$, which is divisible by 8.\\
+\textbf{Induction:}\\
+Let $n \in \mathbb{N}$, and assume $P(n)$ is true, that is, $3^{2n}-1$ is divisible by 8. Thus, by the definition of divisibility, there exists an integer $p$, such that $3^{2k}-1=8p$\\
+Now we must prove that $P(n+1)$ is true. \\
+Consider:
+\begin{align*}
+3^{2(n+1)}-1
+&=3^{2n+2}-1\\
+&=3^{2n} \cdot 3^2-1\\
+&=9(8p+1)-1\\
+&=72p+9-1\\
+&=72p+8\\
+&=8(9p+1)\\
+\end{align*}
+$3^{2n+1}-1$ is divisible by $8$. Thus, $3^{2n}-1$ is divisible by 8 for each integer $n 	\geq 0$, and the value of $(9p+1)$ is also an integer.\\
+\\
+\newprob Prove that $1+4n<2^n$ for all integers $n 	\geq 5$.\\
+For $n \in \mathbb{W}$, assume $P(n)$ is greater than or equal to 5.\\
+\textbf{Basis:}\\
+\begin{align*}
+&1+4(5)<2^5\\
+\end{align*}
+\\
+$\therefore P(5)$ is true. \\
+Let $n \in \mathbb{N}, n \geq 5$, and assume P(n) is true\\
+\textbf{Induction:}\\
+\begin{align*}
+1+4n+4
+&<2^n+2^n\\
+1+4(n+1)
+&<2^n(1+1)=2^n\cdot 2=2^{n+1}\\
+1+4(n+1)
+&<2^{n+1}
+\end{align*}
+$\therefore 1+4n<2^n$ is true for all integers $n 	\geq 5$.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}

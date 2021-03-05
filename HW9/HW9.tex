@@ -1,0 +1,91 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage[hmargin=1in,vmargin=1in]{geometry}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{parskip} % Kill first paragraph indenting
+\usepackage{tikz}
+\usepackage[T1]{fontenc}
+\usepackage{environ}
+
+
+
+\pagestyle{fancy}
+\fancyhead[L]{Omeed Mariani \\ CMSC/Math 207}
+\fancyhead[R]{HW 9 \\ Page \thepage\ of \pageref{LastPage}}
+
+\newcounter{problemnum}
+\newcommand{\newprob}{\addtocounter{problemnum}{1} \noindent (\textbf{\arabic{problemnum}) }}
+
+\begin{document}
+
+\newprob Use induction to prove that for all integers $n \geq 0$, $F_{n+2}F_n-F^2_{n+1}$ = $(-1)^n$.\\
+\textbf{Basis of Induction}\\
+For $n \in \mathbb{N}$, let $P(n)$ be the predicate $F_{n+2}F_n-F^2_{n+1}$ = $(-1)^n$.\\
+
+\begin{align*}
+&F_2F_0-F^2_1\\
+&=1 \cdot 2-1^2\\
+&=(-1)^0\\
+\end{align*}\\
+So $P(0)$ is true.\\
+\textbf{Inductive Hypothesis}\\
+Let  $F_{n+2}F_n-F^2_{n+1}$ = $(-1)^n$ be true for some $n \in \mathbb{W}$.\\
+\textbf{Inductive Step}\\
+\begin{align*}
+&F_{n+3}F_{n+1}-F^2_{n+2}\\
+&=F_{n+3}=F_{n+1}+F_{n+2}\\
+&=(F_{n+1}+F_{n+2})F_{n+1}-F^2_{n+2}\\
+&=F^2_{n+1}+F_{n+1}F_{n+2}-F^2_{n+2}\\
+&=F^2_{n+2} = F_{n+2}F_n-(-1)^n\\
+&=F_{n+2}F_n-(-1)^n+F_{n+1}F_{n+2}-F^2_{n+2}\\
+&=F_{n+2}(F_n+F_{n+1})-(-1)^n-F^2_{n+2}\\
+&=F_n+F_{n+1}=F_{n+2}\\
+&=F^2_{n+2}-(-1)^n-F^2_{n+2}\\
+&=-(-1)^n\\
+&=(-1)^{n+1}.\\
+\end{align*}
+We finally have $F_{n+3}F_{n+1}-F^2_{n+2}=(-1)^{n+1}.$
+\therefore $F_{n+2}F_n-F^2_{n+1}$ = $(-1)^n$
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}

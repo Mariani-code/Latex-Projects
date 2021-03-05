@@ -1,0 +1,113 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage[hmargin=1in,vmargin=1in]{geometry}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{parskip} % Kill first paragraph indenting
+\usepackage{tikz}
+\usepackage[T1]{fontenc}
+\usepackage{environ}
+
+
+
+\pagestyle{fancy}
+\fancyhead[L]{Omeed Mariani \\ CMSC/Math 207}
+\fancyhead[R]{HW 7 \\ Page \thepage\ of \pageref{LastPage}}
+
+\newcounter{problemnum}
+\newcommand{\newprob}{\addtocounter{problemnum}{1} \noindent (\textbf{\arabic{problemnum}) }}
+
+\begin{document}
+
+\newprob
+For $n \in \mathbb{N}$, let $P(n)$ be the predicate $\sum_{k=1}^{n-1}$ $k(k+1)$ = $\frac{n(n-1)(n+1)}{3}$.
+Show for all $n \geq 2$:
+\begin{align*}
+LHS
+&=1(1+1)=2.\\
+RHS
+&=\frac{2(2-1)(2+1)}{3}\\
+&=2.
+\end{align*}
+\therefore $P(1)$ \text{is true}.\\
+\textbf{Inductive Hypothesis}\\
+\text{Assume for some arbitrary } n $  \geq 2$ that $P(n)$, that is $\sum_{k=1}^{n-1}$ $k(k+1)$ = $\frac{n(n-1)(n+1)}{3}$ holds.\\
+\textbf{Inductive Step:}\\
+
+\begin{align*}
+\sum_{k=1}^{n} k(k+1)
+&=\sum_{k=1}^{n-1} k(k+1)+n(n+1)\\
+&=\frac{n(n-1)(n+1)}{3}+n(n+1)\\
+&=\frac{n(n-1)(n+1)+3(n+1)n}{3}\\
+&=\frac{(n+1)(n)(n-1+3)}{3}\\
+&=\frac{n(n-1)(n+1)}{3}.
+\end{align*}
+
+Thus, $P(n+1)$ \text{ is true and so we have proved the inductive step.}\\
+\text{Therefore by the principle of Mathmatical Induction, }$\sum_{k=1}^{n-1}$ $k(k+1)$ = $\frac{n(n-1)(n+1)}{3}$ \text { is true for all }$n \in \mathbb{N}$
+
+\newprob
+
+For $n \in \mathbb{N}$, let $P(n)$ be the predicate $\sum_{k=1}^{n+1}$ $k \cdot 2^k$ = $n \cdot 2^{n+2}+2$.\\
+\text{Show for all } $n \geq 0$:
+\begin{align*}
+LHS
+&=1*2^1=2,\\
+RHS
+&=0*2^{0+2}+2=2.\\
+\end{align*}
+\textbf{Inductive Hypothesis}\\
+Assume for some arbitrary $n \geq 0$ that $P(n)$ that is $\sum_{k=1}^{n+1}$ $k \cdot 2^k$ = $n \cdot 2^{n+2}+2$ holds.\\
+\textbf{Inductive Step:}\\
+\begin{align*}
+\sum_{k=1}^{n} k \cdot 2^k
+&=\sum_{k=1}^{n+1} k \cdot 2^k + (n+2) \cdot 2^{n+2}\\
+&=n \cdot 2^{n+2}+2+(n+2)\cdot 2^{n+2}\\
+&=(2m+2) \cdot 2^{n+2}+2\\
+&=2(n+1) \cdot 2^{n+2}+2\\
+&=(n+1) \cdot 2^{n+2} +2
+\end{align*}
+Thus, $P(n+1)$ \text{ is true and so we have proved the inductive step.}\\
+\text{Therefore by the principles of Mathmatical Induction } $\sum_{k=1}^{n+1}$
+$k \cdot 2^k$ = $n \cdot 2^{n+2}+2$ \text { is true for all }$n \in \mathbb{N}$.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
